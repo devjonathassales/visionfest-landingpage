@@ -3,18 +3,18 @@ export function Hero() {
     <section className="relative overflow-hidden px-6 pt-16 pb-20 md:pt-24 md:pb-28">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(126,217,87,0.12),transparent_18%),radial-gradient(circle_at_80%_15%,rgba(255,255,255,0.07),transparent_15%)]" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
         <div>
           <span className="inline-flex rounded-full border border-lime-400/20 bg-lime-400/10 px-4 py-1 text-sm font-medium text-lime-300">
             Mais organização. Mais controle. Mais vendas.
           </span>
 
-          <h1 className="mt-6 max-w-3xl text-4xl leading-tight font-black tracking-tight text-white md:text-6xl">
+          <h1 className="mt-6 max-w-[12ch] text-4xl leading-[1.02] font-black tracking-tight text-white sm:text-5xl md:max-w-[11ch] md:text-6xl xl:text-7xl">
             O sistema que ajuda fornecedores de festas e eventos a crescer com
             gestão profissional.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72 md:text-xl">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-white/72 md:text-xl">
             Centralize agenda, orçamentos, contratos, clientes, estoque e
             financeiro em um só lugar e pare de depender de processos soltos.
           </p>
