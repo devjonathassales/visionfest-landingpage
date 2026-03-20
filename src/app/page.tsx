@@ -9,7 +9,7 @@ import { Pricing } from "@/components/landing/pricing";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-[#050816] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[#040816] text-white">
       <Header />
       <Hero />
       <Features />

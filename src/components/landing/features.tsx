@@ -2,49 +2,49 @@ const features = [
   {
     title: "Agenda centralizada",
     description:
-      "Visualize eventos, compromissos e demandas operacionais sem depender de anotações soltas.",
+      "Tenha visão clara dos eventos, entregas, compromissos e demandas da operação em um único ambiente.",
   },
   {
-    title: "Orçamentos mais rápidos",
+    title: "Orçamentos e contratos",
     description:
-      "Tenha processos mais claros para vender melhor e responder clientes com mais agilidade.",
+      "Organize sua jornada comercial com mais rapidez, mais padrão e menos retrabalho no atendimento.",
   },
   {
-    title: "Financeiro sob controle",
+    title: "Financeiro mais seguro",
     description:
-      "Acompanhe recebimentos, fluxo e organização financeira com mais segurança.",
+      "Acompanhe entradas, recebimentos e organização financeira sem depender de controles espalhados.",
   },
   {
     title: "Estoque e locação",
     description:
-      "Controle itens, movimentações e operação de produtos alugados ou vendidos.",
+      "Controle produtos, movimentações e itens alugados com muito mais clareza operacional.",
   },
   {
     title: "Cadastro de clientes",
     description:
-      "Centralize informações importantes e melhore o acompanhamento comercial.",
+      "Centralize informações estratégicas dos clientes e melhore o acompanhamento da equipe.",
   },
   {
-    title: "Crescimento com processo",
+    title: "Gestão para crescer",
     description:
-      "Profissionalize sua empresa e ganhe visão para escalar sem perder controle.",
+      "Estruture sua empresa para vender mais, operar melhor e ganhar maturidade de gestão.",
   },
 ];
 
 export function Features() {
   return (
-    <section id="recursos" className="px-6 py-20">
+    <section id="recursos" className="px-6 py-20 md:py-24">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-widest text-lime-300 uppercase">
-            Recursos
+          <p className="text-sm font-semibold tracking-[0.25em] text-lime-300 uppercase">
+            Recursos principais
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
-            Tudo o que sua operação precisa para funcionar melhor
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
+            Tudo o que sua empresa precisa para operar com mais clareza
           </h2>
-          <p className="mt-4 text-white/70">
-            O VisionFest foi pensado para reduzir retrabalho, organizar a rotina
-            e transformar sua gestão em algo realmente profissional.
+          <p className="mt-5 text-lg leading-8 text-white/70">
+            O VisionFest nasce para profissionalizar a rotina de fornecedores de
+            festas e eventos e transformar a gestão em vantagem competitiva.
           </p>
         </div>
 
@@ -52,12 +52,13 @@ export function Features() {
           {features.map((feature) => (
             <article
               key={feature.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+              className="rounded-[1.75rem] border border-white/10 bg-white/5 p-7 backdrop-blur-sm transition hover:-translate-y-1 hover:bg-white/[0.07]"
             >
+              <div className="mb-5 h-11 w-11 rounded-2xl bg-lime-400/14" />
               <h3 className="text-xl font-semibold text-white">
                 {feature.title}
               </h3>
-              <p className="mt-3 leading-7 text-white/70">
+              <p className="mt-4 leading-7 text-white/68">
                 {feature.description}
               </p>
             </article>

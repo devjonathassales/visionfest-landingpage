@@ -17,11 +17,12 @@ export default function RootLayout({
     operatingSystem: "Web",
     description:
       "Sistema para fornecedores de festas e eventos com foco em gestão, operação, financeiro, agenda e atendimento.",
+    url: "https://visionfest.com.br",
   };
 
   return (
     <html lang="pt-BR">
-      <body>
+      <body className="bg-[#040816] text-white antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

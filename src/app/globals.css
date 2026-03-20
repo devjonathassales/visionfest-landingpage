@@ -2,6 +2,15 @@
 
 :root {
   color-scheme: dark;
+  --background: #040816;
+  --background-soft: #08101f;
+  --foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.1);
+  --card: rgba(255, 255, 255, 0.05);
+  --card-strong: rgba(255, 255, 255, 0.08);
+  --primary: #7ed957;
+  --primary-foreground: #07110a;
 }
 
 html {
@@ -11,9 +20,13 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background: #050816;
-  color: #ffffff;
+  background:
+    radial-gradient(circle at top, rgba(126, 217, 87, 0.18), transparent 25%),
+    linear-gradient(180deg, #030712 0%, #040816 38%, #091120 100%);
+  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -22,4 +35,9 @@ body {
 
 a {
   text-decoration: none;
+}
+
+::selection {
+  background: rgba(126, 217, 87, 0.28);
+  color: #fff;
 }

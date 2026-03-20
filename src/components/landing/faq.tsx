@@ -1,14 +1,14 @@
-import { faqItems } from "../../data/site";
+import { faqItems } from "@/data/site";
 
 export function FAQ() {
   return (
-    <section id="faq" className="px-6 py-20">
-      <div className="mx-auto max-w-4xl">
+    <section id="faq" className="px-6 py-20 md:py-24">
+      <div className="mx-auto max-w-5xl">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-widest text-lime-300 uppercase">
+          <p className="text-sm font-semibold tracking-[0.25em] text-lime-300 uppercase">
             FAQ
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
             Dúvidas frequentes
           </h2>
         </div>
@@ -17,12 +17,12 @@ export function FAQ() {
           {faqItems.map((item) => (
             <article
               key={item.question}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+              className="rounded-[1.75rem] border border-white/10 bg-white/[0.05] p-6 md:p-7"
             >
               <h3 className="text-lg font-semibold text-white">
                 {item.question}
               </h3>
-              <p className="mt-3 leading-7 text-white/70">{item.answer}</p>
+              <p className="mt-3 leading-7 text-white/68">{item.answer}</p>
             </article>
           ))}
         </div>

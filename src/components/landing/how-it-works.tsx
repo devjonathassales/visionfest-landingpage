@@ -1,31 +1,32 @@
 const steps = [
   {
-    title: "Organize sua base",
+    title: "Centralize sua operação",
     description:
-      "Cadastre clientes, serviços, produtos e dados essenciais do seu negócio.",
+      "Reúna dados, clientes, rotina, eventos e pontos importantes do seu negócio em um único sistema.",
   },
   {
-    title: "Estruture sua operação",
+    title: "Ganhe controle da gestão",
     description:
-      "Centralize agenda, financeiro, orçamentos e acompanhamento da rotina.",
+      "Estruture agenda, financeiro, atendimento e processos para ter mais previsibilidade e menos falhas.",
   },
   {
-    title: "Ganhe escala",
+    title: "Escale com organização",
     description:
-      "Tenha mais previsibilidade, menos retrabalho e uma gestão muito mais profissional.",
+      "Profissionalize sua empresa e aumente a capacidade de operação sem perder qualidade no processo.",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="como-funciona" className="px-6 py-20">
-      <div className="mx-auto max-w-7xl">
+    <section id="como-funciona" className="px-6 py-20 md:py-24">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 md:p-12">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-widest text-lime-300 uppercase">
+          <p className="text-sm font-semibold tracking-[0.25em] text-lime-300 uppercase">
             Como funciona
           </p>
-          <h2 className="mt-3 text-3xl font-bold text-white md:text-4xl">
-            Um fluxo simples para transformar sua gestão
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
+            Um sistema pensado para simplificar a rotina e elevar o nível da sua
+            gestão
           </h2>
         </div>
 
@@ -33,15 +34,15 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <article
               key={step.title}
-              className="rounded-3xl border border-white/10 bg-white/5 p-6"
+              className="rounded-[1.75rem] border border-white/10 bg-[#07101d] p-7"
             >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-lime-400 font-bold text-black">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-lime-400 font-bold text-black shadow-[0_0_25px_rgba(126,217,87,0.25)]">
                 {index + 1}
               </span>
               <h3 className="mt-5 text-xl font-semibold text-white">
                 {step.title}
               </h3>
-              <p className="mt-3 leading-7 text-white/70">{step.description}</p>
+              <p className="mt-4 leading-7 text-white/68">{step.description}</p>
             </article>
           ))}
         </div>
