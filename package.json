@@ -2,6 +2,9 @@
   "name": "visionfest-landingpage",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -39,8 +42,8 @@
     "vitest": "^4.1.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,css,md,json}": [
-      "prettier --check"
+    "*.{js,jsx,ts,tsx,mjs,cjs,css,md,json,yml,yaml}": [
+      "prettier --write"
     ]
   }
 }
