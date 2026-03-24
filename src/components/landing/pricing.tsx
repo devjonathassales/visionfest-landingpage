@@ -22,29 +22,29 @@ const plans = [
 
 export function Pricing() {
   return (
-    <section id="planos" className="px-6 py-20 md:py-24">
+    <section id="planos" className="px-4 py-16 md:px-6 md:py-24">
       <div className="mx-auto max-w-7xl">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-[0.25em] text-lime-300 uppercase">
+        <div className="max-w-3xl">
+          <p className="text-sm font-semibold tracking-[0.24em] text-[#7ed957] uppercase">
             Planos
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
-            Estrutura simples, clara e pronta para acompanhar sua evolução
+            Estrutura clara para acompanhar o momento do seu negócio
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`rounded-[2rem] border p-8 backdrop-blur-sm ${
+              className={`rounded-[1.8rem] border p-8 ${
                 plan.featured
-                  ? "border-lime-400/40 bg-lime-400/[0.09] shadow-[0_0_50px_rgba(126,217,87,0.08)]"
-                  : "border-white/10 bg-white/[0.05]"
+                  ? "border-[#5c2c6f]/45 bg-[linear-gradient(180deg,rgba(92,44,111,0.16),rgba(126,217,87,0.08))]"
+                  : "border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.04))]"
               }`}
             >
               {plan.featured ? (
-                <span className="inline-flex rounded-full border border-lime-400/30 bg-lime-400/12 px-3 py-1 text-xs font-semibold tracking-wider text-lime-300 uppercase">
+                <span className="inline-flex rounded-full border border-[#7ed957]/20 bg-[#7ed957]/10 px-3 py-1 text-xs font-semibold tracking-wider text-[#7ed957] uppercase">
                   Mais completo
                 </span>
               ) : null}
@@ -55,7 +55,7 @@ export function Pricing() {
               <p className="mt-4 text-4xl font-black tracking-tight text-white">
                 {plan.price}
               </p>
-              <p className="mt-4 min-h-[84px] leading-7 text-white/68">
+              <p className="mt-4 min-h-[84px] leading-7 text-[#C0C0C0]/82">
                 {plan.description}
               </p>
 
@@ -63,7 +63,7 @@ export function Pricing() {
                 href="#lead-form"
                 className={`mt-8 inline-flex rounded-full px-5 py-3 font-semibold transition ${
                   plan.featured
-                    ? "bg-lime-400 text-black hover:scale-[1.02]"
+                    ? "bg-[#7ed957] text-black hover:scale-[1.02]"
                     : "border border-white/12 text-white hover:bg-white/5"
                 }`}
               >
