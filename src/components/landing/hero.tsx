@@ -9,22 +9,46 @@ const badges = [
   "Financeiro",
 ];
 
+function CheckIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4 fill-current"
+    >
+      <path d="M9.55 18.2 3.8 12.45l1.4-1.4 4.35 4.32 9.25-9.27 1.4 1.42L9.55 18.2Z" />
+    </svg>
+  );
+}
+
+function WhatsAppIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4 fill-current"
+    >
+      <path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.5 0 .17 5.33.17 11.89c0 2.1.55 4.15 1.6 5.95L0 24l6.35-1.66a11.86 11.86 0 0 0 5.71 1.46h.01c6.56 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.44-8.43ZM12.06 21.8h-.01a9.83 9.83 0 0 1-5-1.37l-.36-.21-3.77.99 1.01-3.68-.23-.38a9.84 9.84 0 0 1-1.52-5.26C2.18 6.44 6.61 2 12.06 2c2.63 0 5.1 1.02 6.95 2.88a9.75 9.75 0 0 1 2.87 6.94c0 5.45-4.43 9.88-9.88 9.88Zm5.42-7.41c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.28-.47-2.43-1.49-.9-.8-1.5-1.8-1.68-2.1-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.08-.15-.67-1.61-.92-2.21-.24-.57-.49-.49-.67-.5h-.57c-.2 0-.52.08-.8.37-.27.3-1.05 1.02-1.05 2.48s1.08 2.86 1.23 3.06c.15.2 2.13 3.25 5.16 4.55.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.08-.12-.28-.2-.58-.35Z" />
+    </svg>
+  );
+}
+
 export function Hero() {
   return (
-    <section className="hero-grid relative overflow-hidden px-6 pt-14 pb-24 md:pt-20 md:pb-32">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_16%,rgba(126,217,87,0.12),transparent_18%),radial-gradient(circle_at_82%_20%,rgba(255,255,255,0.05),transparent_12%)]" />
+    <section className="hero-grid relative overflow-hidden px-6 pt-16 pb-24 md:pt-20 md:pb-28">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_16%,rgba(126,217,87,0.10),transparent_18%),radial-gradient(circle_at_82%_20%,rgba(255,255,255,0.04),transparent_12%)]" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[0.9fr_1.1fr]">
+      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[0.92fr_1.08fr]">
         <div>
           <span className="inline-flex rounded-full border border-lime-400/20 bg-lime-400/10 px-4 py-1.5 text-sm font-medium text-lime-300">
             Simples. Profissional. Feito para o mercado real.
           </span>
 
-          <h1 className="mt-6 max-w-[10ch] text-4xl leading-[0.96] font-black tracking-tight text-white sm:text-5xl md:text-6xl xl:text-[5.25rem]">
+          <h1 className="mt-6 max-w-[11ch] text-4xl leading-[0.98] font-black tracking-tight text-white sm:text-5xl md:max-w-[12ch] md:text-[4.1rem] xl:text-[4.7rem]">
             Gestão completa para fornecedores de festas e eventos.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72 md:text-xl">
+          <p className="mt-6 max-w-xl text-lg leading-8 text-white/72 md:text-[1.15rem]">
             Orçamentos, contratos, agenda, clientes, estoque e financeiro em um
             único sistema para profissionalizar sua operação e organizar sua
             empresa de ponta a ponta.
@@ -33,7 +57,7 @@ export function Hero() {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
               href="#lead-form"
-              className="rounded-full bg-lime-400 px-7 py-3.5 text-center font-semibold text-black shadow-[0_0_40px_rgba(126,217,87,0.22)] transition hover:scale-[1.02]"
+              className="rounded-full bg-lime-400 px-7 py-3.5 text-center font-semibold text-black shadow-[0_0_40px_rgba(126,217,87,0.18)] transition hover:scale-[1.02]"
             >
               Quero conhecer
             </a>
@@ -42,24 +66,27 @@ export function Hero() {
               href="https://wa.me/5585996451221"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-white/12 px-7 py-3.5 text-center font-semibold text-white transition hover:bg-white/5"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/12 px-7 py-3.5 text-center font-semibold text-white transition hover:bg-white/5"
             >
+              <WhatsAppIcon />
               Falar no WhatsApp
             </a>
           </div>
 
-          <div className="mt-8 grid max-w-2xl gap-4 sm:grid-cols-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             {[
-              { value: "Agenda", label: "mais controle operacional" },
-              { value: "Financeiro", label: "mais previsibilidade" },
-              { value: "Clientes", label: "acompanhamento mais claro" },
+              "Operação centralizada",
+              "Mais controle financeiro",
+              "Fluxos mais organizados",
             ].map((item) => (
               <div
-                key={item.value}
-                className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm"
+                key={item}
+                className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/78"
               >
-                <p className="text-lg font-bold text-white">{item.value}</p>
-                <p className="mt-1 text-sm text-white/60">{item.label}</p>
+                <span className="text-lime-300">
+                  <CheckIcon />
+                </span>
+                {item}
               </div>
             ))}
           </div>
@@ -68,7 +95,7 @@ export function Hero() {
             {badges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/75 backdrop-blur-sm"
+                className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/70 backdrop-blur-sm"
               >
                 {badge}
               </span>
@@ -106,9 +133,9 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="absolute -bottom-8 -left-6 hidden w-[38%] overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#0b1523]/95 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl lg:block">
+            <div className="absolute -bottom-8 -left-6 hidden w-[38%] overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#0b1523]/95 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl lg:block">
               <div className="border-b border-white/8 px-4 py-3">
-                <p className="text-xs font-semibold tracking-[0.2em] text-lime-300 uppercase">
+                <p className="text-[11px] font-semibold tracking-[0.2em] text-lime-300 uppercase">
                   Cadastro de cliente
                 </p>
               </div>
@@ -122,9 +149,9 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="absolute top-10 -right-6 hidden w-[34%] overflow-hidden rounded-[1.4rem] border border-white/10 bg-[#0b1523]/95 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl xl:block">
+            <div className="absolute top-10 -right-6 hidden w-[34%] overflow-hidden rounded-[1.35rem] border border-white/10 bg-[#0b1523]/95 shadow-[0_16px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl xl:block">
               <div className="border-b border-white/8 px-4 py-3">
-                <p className="text-xs font-semibold tracking-[0.2em] text-lime-300 uppercase">
+                <p className="text-[11px] font-semibold tracking-[0.2em] text-lime-300 uppercase">
                   Financeiro
                 </p>
               </div>
