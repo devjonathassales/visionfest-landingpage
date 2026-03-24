@@ -83,3 +83,7 @@ a {
   pointer-events: none;
   z-index: 0;
 }
+img {
+  display: block;
+  max-width: 100%;
+}
