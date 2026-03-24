@@ -22,7 +22,7 @@ export function SiteLogo({ compact = false }: SiteLogoProps) {
       ) : (
         <div className="relative h-10 w-[170px] md:h-11 md:w-[190px]">
           <Image
-            src="/brand/visionfest-logo-full.png"
+            src="/brand/visionfest-logo-full.svg"
             alt="VisionFest"
             fill
             sizes="(max-width: 768px) 170px, 190px"
