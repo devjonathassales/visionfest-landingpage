@@ -38,7 +38,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-white/72 transition hover:text-white"
+              className="text-sm font-medium text-[#C0C0C0]/88 transition hover:text-white"
             >
               {item.label}
             </a>
@@ -51,7 +51,7 @@ export function Header() {
               href="https://wa.me/5585996451221"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5"
+              className="inline-flex items-center gap-2 rounded-full border border-[#5c2c6f]/40 bg-white/[0.02] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#5c2c6f]/12"
             >
               <WhatsAppIcon />
               WhatsApp
@@ -59,7 +59,7 @@ export function Header() {
 
             <a
               href="#lead-form"
-              className="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]"
+              className="rounded-full bg-[#7ed957] px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]"
             >
               Agendar demonstração
             </a>
@@ -69,7 +69,7 @@ export function Header() {
             href="https://wa.me/5585996451221"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-white/10 p-2.5 text-white transition hover:bg-white/5 md:hidden"
+            className="inline-flex items-center justify-center rounded-full border border-[#5c2c6f]/40 bg-white/[0.02] p-2.5 text-white transition hover:bg-[#5c2c6f]/12 md:hidden"
             aria-label="Falar no WhatsApp"
           >
             <WhatsAppIcon />
