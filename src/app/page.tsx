@@ -3,6 +3,7 @@ import { Comparison } from "@/components/landing/comparison";
 import { FAQ } from "@/components/landing/faq";
 import { Features } from "@/components/landing/features";
 import { FinalCTA } from "@/components/landing/final-cta";
+import { FloatingWhatsApp } from "@/components/landing/floating-whatsapp";
 import { Footer } from "@/components/landing/footer";
 import { Header } from "@/components/landing/header";
 import { Hero } from "@/components/landing/hero";
@@ -28,6 +29,7 @@ export default function HomePage() {
       <LeadForm />
       <FinalCTA />
       <Footer />
+      <FloatingWhatsApp />
     </main>
   );
 }

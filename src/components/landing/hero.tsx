@@ -1,22 +1,24 @@
+import { HeroBadges } from "@/components/landing/hero-badges";
+import { SystemPreview } from "@/components/landing/system-preview";
+
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(126,217,87,0.12),transparent_18%),radial-gradient(circle_at_80%_15%,rgba(255,255,255,0.07),transparent_15%)]" />
+    <section className="hero-grid relative overflow-hidden px-6 pt-14 pb-24 md:pt-20 md:pb-32">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_18%,rgba(126,217,87,0.10),transparent_18%),radial-gradient(circle_at_78%_18%,rgba(255,255,255,0.05),transparent_12%)]" />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
+      <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
         <div>
-          <span className="inline-flex rounded-full border border-lime-400/20 bg-lime-400/10 px-4 py-1 text-sm font-medium text-lime-300">
+          <span className="inline-flex rounded-full border border-lime-400/20 bg-lime-400/10 px-4 py-1.5 text-sm font-medium text-lime-300">
             Mais organização. Mais controle. Mais vendas.
           </span>
 
-          <h1 className="mt-6 max-w-[12ch] text-4xl leading-[1.02] font-black tracking-tight text-white sm:text-5xl md:max-w-[11ch] md:text-6xl xl:text-7xl">
-            O sistema que ajuda fornecedores de festas e eventos a crescer com
-            gestão profissional.
+          <h1 className="mt-6 max-w-[11ch] text-4xl leading-[0.98] font-black tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
+            Gestão profissional para fornecedores de festas e eventos.
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-white/72 md:text-xl">
-            Centralize agenda, orçamentos, contratos, clientes, estoque e
-            financeiro em um só lugar e pare de depender de processos soltos.
+            Centralize agenda, clientes, orçamentos, contratos, estoque e
+            financeiro em um único sistema e profissionalize sua operação.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -40,8 +42,8 @@ export function Hero() {
           <div className="mt-10 grid max-w-2xl gap-4 sm:grid-cols-3">
             {[
               { value: "Agenda", label: "controle operacional" },
-              { value: "Financeiro", label: "mais organizado" },
-              { value: "Estoque", label: "sob mais controle" },
+              { value: "Financeiro", label: "mais previsibilidade" },
+              { value: "Estoque", label: "mais clareza na operação" },
             ].map((item) => (
               <div
                 key={item.value}
@@ -52,60 +54,11 @@ export function Hero() {
               </div>
             ))}
           </div>
+
+          <HeroBadges />
         </div>
 
-        <div className="relative">
-          <div className="absolute -inset-4 rounded-[2rem] bg-lime-400/10 blur-3xl" />
-          <div className="relative rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-6 shadow-2xl backdrop-blur-xl">
-            <div className="rounded-[1.5rem] border border-white/10 bg-[#07101f] p-5">
-              <div className="flex items-center gap-2">
-                <span className="h-3 w-3 rounded-full bg-red-400/70" />
-                <span className="h-3 w-3 rounded-full bg-yellow-400/70" />
-                <span className="h-3 w-3 rounded-full bg-green-400/70" />
-              </div>
-
-              <div className="mt-6 grid gap-4">
-                <div className="rounded-2xl border border-white/8 bg-white/5 p-4">
-                  <p className="text-xs tracking-[0.2em] text-lime-300 uppercase">
-                    Resumo do dia
-                  </p>
-                  <div className="mt-4 grid gap-3 sm:grid-cols-3">
-                    <div className="rounded-xl bg-black/20 p-3">
-                      <p className="text-sm text-white/55">Eventos</p>
-                      <p className="mt-1 text-2xl font-bold text-white">12</p>
-                    </div>
-                    <div className="rounded-xl bg-black/20 p-3">
-                      <p className="text-sm text-white/55">Recebimentos</p>
-                      <p className="mt-1 text-2xl font-bold text-white">
-                        R$ 8,4k
-                      </p>
-                    </div>
-                    <div className="rounded-xl bg-black/20 p-3">
-                      <p className="text-sm text-white/55">Pendências</p>
-                      <p className="mt-1 text-2xl font-bold text-white">03</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-2">
-                  {[
-                    "Orçamentos e contratos",
-                    "Fluxo financeiro",
-                    "Cadastro de clientes",
-                    "Controle de locação",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-2xl border border-white/8 bg-white/5 p-4 text-sm text-white/85"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SystemPreview />
       </div>
     </section>
   );

@@ -2,8 +2,8 @@ export function FinalCTA() {
   return (
     <section className="px-6 pt-10 pb-24">
       <div className="mx-auto max-w-7xl">
-        <div className="rounded-[2rem] border border-lime-400/20 bg-[linear-gradient(135deg,rgba(126,217,87,0.12),rgba(255,255,255,0.04))] p-8 shadow-[0_0_60px_rgba(126,217,87,0.08)] md:p-12">
-          <div className="max-w-3xl">
+        <div className="section-glow overflow-hidden rounded-[2rem] border border-lime-400/20 bg-[linear-gradient(135deg,rgba(126,217,87,0.10),rgba(255,255,255,0.04))] p-8 shadow-[0_0_60px_rgba(126,217,87,0.08)] md:p-12">
+          <div className="relative z-10 max-w-3xl">
             <p className="text-sm font-semibold tracking-[0.25em] text-lime-300 uppercase">
               Pronto para evoluir sua gestão?
             </p>
