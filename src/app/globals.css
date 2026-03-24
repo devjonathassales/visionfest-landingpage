@@ -11,6 +11,7 @@
   --card-strong: rgba(255, 255, 255, 0.08);
   --primary: #7ed957;
   --primary-foreground: #07110a;
+  --accent-purple: #7c3aed;
 }
 
 html {
@@ -23,20 +24,20 @@ body {
   background:
     radial-gradient(
       circle at 15% 10%,
-      rgba(126, 217, 87, 0.12),
-      transparent 22%
-    ),
-    radial-gradient(
-      circle at 85% 18%,
       rgba(126, 217, 87, 0.08),
       transparent 18%
     ),
     radial-gradient(
-      circle at 50% 100%,
-      rgba(80, 120, 255, 0.06),
-      transparent 28%
+      circle at 78% 12%,
+      rgba(124, 58, 237, 0.12),
+      transparent 20%
     ),
-    linear-gradient(180deg, #020611 0%, #040816 35%, #07101d 100%);
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(124, 58, 237, 0.06),
+      transparent 26%
+    ),
+    linear-gradient(180deg, #020611 0%, #040816 38%, #07101d 100%);
   color: var(--foreground);
   font-family: Inter, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -56,10 +57,15 @@ a {
   color: #fff;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 .hero-grid {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(124, 58, 237, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.045) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
@@ -82,8 +88,4 @@ a {
   filter: blur(30px);
   pointer-events: none;
   z-index: 0;
-}
-img {
-  display: block;
-  max-width: 100%;
 }

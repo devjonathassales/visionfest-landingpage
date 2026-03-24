@@ -22,17 +22,18 @@ function WhatsAppIcon() {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/8 bg-[#040816]/72 backdrop-blur-2xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <div className="hidden md:block">
-          <SiteLogo />
+    <header className="sticky top-0 z-50 border-b border-white/8 bg-[#040816]/78 backdrop-blur-2xl">
+      <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 md:px-6">
+        <div className="justify-self-start">
+          <div className="hidden md:block">
+            <SiteLogo />
+          </div>
+          <div className="md:hidden">
+            <SiteLogo compact />
+          </div>
         </div>
 
-        <div className="md:hidden">
-          <SiteLogo compact />
-        </div>
-
-        <nav className="hidden items-center gap-7 xl:flex">
+        <nav className="hidden items-center justify-center gap-6 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -44,22 +45,34 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="justify-self-end">
+          <div className="hidden items-center gap-3 md:flex">
+            <a
+              href="https://wa.me/5585996451221"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5"
+            >
+              <WhatsAppIcon />
+              WhatsApp
+            </a>
+
+            <a
+              href="#lead-form"
+              className="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]"
+            >
+              Agendar demonstração
+            </a>
+          </div>
+
           <a
             href="https://wa.me/5585996451221"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/5"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 p-2.5 text-white transition hover:bg-white/5 md:hidden"
+            aria-label="Falar no WhatsApp"
           >
             <WhatsAppIcon />
-            WhatsApp
-          </a>
-
-          <a
-            href="#lead-form"
-            className="rounded-full bg-lime-400 px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]"
-          >
-            Agendar demonstração
           </a>
         </div>
       </div>
