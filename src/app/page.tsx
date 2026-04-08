@@ -12,8 +12,10 @@ import { Integrations } from "@/components/landing/integrations";
 import { LeadForm } from "@/components/landing/lead-form";
 import { Modules } from "@/components/landing/modules";
 import { Pricing } from "@/components/landing/pricing";
+import { PromoPopup } from "@/components/landing/promo-popup";
 import { Screenshots } from "@/components/landing/screenshots";
 import { Trust } from "@/components/landing/trust";
+import { WizardShell } from "@/components/landing/wizard-shell";
 
 export default function HomePage() {
   return (
@@ -26,6 +28,7 @@ export default function HomePage() {
       <Modules />
       <HowItWorks />
       <Comparison />
+      <WizardShell />
       <Integrations />
       <Pricing />
       <Trust />
@@ -34,6 +37,7 @@ export default function HomePage() {
       <FinalCTA />
       <Footer />
       <FloatingWhatsApp />
+      <PromoPopup />
     </main>
   );
 }

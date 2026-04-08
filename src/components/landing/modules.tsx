@@ -23,7 +23,7 @@ const moduleGroups = [
 
 function GroupIcon({ index }: { index: number }) {
   const baseClass =
-    "inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-[#7ed957]";
+    "inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(126,217,87,0.12),rgba(92,44,111,0.18))] text-[#7ed957]";
 
   if (index === 0) {
     return (
@@ -67,7 +67,7 @@ function GroupIcon({ index }: { index: number }) {
 export function Modules() {
   return (
     <section id="modulos" className="px-4 py-16 md:px-6 md:py-24">
-      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(92,44,111,0.08))] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.22)] md:p-10">
+      <div className="mx-auto max-w-7xl rounded-[2rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(92,44,111,0.10))] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.20)] md:p-10">
         <div className="max-w-3xl">
           <p className="text-sm font-semibold tracking-[0.24em] text-[#7ed957] uppercase">
             Módulos do sistema
@@ -87,7 +87,7 @@ export function Modules() {
           {moduleGroups.map((group, index) => (
             <article
               key={group.title}
-              className="rounded-[1.6rem] border border-white/10 bg-black/20 p-6"
+              className="rounded-[1.6rem] border border-white/8 bg-[rgba(0,0,0,0.18)] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.14)] transition duration-300 hover:-translate-y-1 hover:border-[#5c2c6f]/35"
             >
               <div className="flex items-start gap-4">
                 <GroupIcon index={index} />

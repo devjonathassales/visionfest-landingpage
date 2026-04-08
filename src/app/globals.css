@@ -8,13 +8,14 @@
   --vf-white: #ffffff;
   --vf-black: #000000;
 
-  --background: #040816;
-  --background-soft: #08101f;
+  --background: #03050a;
+  --background-soft: #070b14;
+  --background-panel: #0a101b;
   --foreground: #ffffff;
   --muted: rgba(192, 192, 192, 0.82);
-  --border: rgba(255, 255, 255, 0.1);
-  --card: rgba(255, 255, 255, 0.05);
-  --card-strong: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.08);
+  --card: rgba(255, 255, 255, 0.04);
+  --card-strong: rgba(255, 255, 255, 0.07);
 }
 
 html {
@@ -26,17 +27,17 @@ body {
   min-height: 100vh;
   background:
     radial-gradient(
-      circle at 14% 10%,
-      rgba(126, 217, 87, 0.08),
+      circle at 12% 8%,
+      rgba(126, 217, 87, 0.06),
       transparent 16%
     ),
-    radial-gradient(circle at 78% 12%, rgba(92, 44, 111, 0.2), transparent 22%),
+    radial-gradient(circle at 82% 10%, rgba(92, 44, 111, 0.2), transparent 22%),
     radial-gradient(
-      circle at 55% 100%,
-      rgba(92, 44, 111, 0.1),
-      transparent 28%
+      circle at 50% 100%,
+      rgba(92, 44, 111, 0.08),
+      transparent 26%
     ),
-    linear-gradient(180deg, #020611 0%, #040816 40%, #07101d 100%);
+    linear-gradient(180deg, #010204 0%, #040816 38%, #070c14 100%);
   color: var(--foreground);
   font-family: Inter, Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -63,8 +64,8 @@ img {
 
 .hero-grid {
   background-image:
-    linear-gradient(rgba(92, 44, 111, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(92, 44, 111, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(92, 44, 111, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 44, 111, 0.05) 1px, transparent 1px);
   background-size: 36px 36px;
 }
 
@@ -79,11 +80,12 @@ img {
   width: 40rem;
   height: 40rem;
   transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(92, 44, 111, 0.14), transparent 60%);
+  background: radial-gradient(circle, rgba(92, 44, 111, 0.16), transparent 60%);
   filter: blur(30px);
   pointer-events: none;
   z-index: 0;
 }
+
 button,
 a {
   transition:
@@ -105,7 +107,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: rgba(126, 217, 87, 0.4);
+  border-color: rgba(126, 217, 87, 0.35);
   box-shadow: 0 0 0 3px rgba(126, 217, 87, 0.08);
 }
 

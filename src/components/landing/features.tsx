@@ -52,42 +52,36 @@ const features = [
     description:
       "Tenha visão clara dos eventos, entregas, compromissos e demandas operacionais em um único ambiente.",
     icon: CalendarIcon,
-    accent: "from-[#7ed957]/12 to-[#5c2c6f]/10",
   },
   {
     title: "Financeiro mais seguro",
     description:
       "Acompanhe entradas, recebimentos e pendências sem depender de controles espalhados.",
     icon: WalletIcon,
-    accent: "from-[#5c2c6f]/14 to-[#7ed957]/8",
   },
   {
     title: "Clientes e relacionamento",
     description:
       "Centralize informações estratégicas dos clientes e acompanhe melhor cada oportunidade.",
     icon: UsersIcon,
-    accent: "from-[#7ed957]/10 to-white/[0.02]",
   },
   {
     title: "Estoque e locação",
     description:
       "Controle itens, movimentações e produtos alugados com mais clareza operacional.",
     icon: BoxesIcon,
-    accent: "from-[#5c2c6f]/16 to-white/[0.03]",
   },
   {
     title: "Orçamentos e contratos",
     description:
       "Estruture sua jornada comercial com mais padrão, mais agilidade e menos retrabalho.",
     icon: FileTextIcon,
-    accent: "from-white/[0.04] to-[#5c2c6f]/10",
   },
   {
     title: "Relatórios e visão gerencial",
     description:
       "Tenha uma visão mais profissional do seu negócio para acompanhar evolução e desempenho.",
     icon: ChartIcon,
-    accent: "from-[#7ed957]/10 to-[#5c2c6f]/12",
   },
 ];
 
@@ -108,7 +102,7 @@ export function Features() {
               retrabalho e transformar a gestão em uma vantagem competitiva.
             </p>
 
-            <div className="mt-8 rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.08))] p-6">
+            <div className="mt-8 rounded-[1.6rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(92,44,111,0.10))] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.16)]">
               <p className="text-sm tracking-[0.22em] text-[#C0C0C0]/70 uppercase">
                 Resultado esperado
               </p>
@@ -128,9 +122,9 @@ export function Features() {
               return (
                 <article
                   key={feature.title}
-                  className={`rounded-[1.6rem] border border-white/10 bg-gradient-to-b ${feature.accent} p-6 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-sm transition hover:-translate-y-1 hover:border-[#5c2c6f]/35`}
+                  className="rounded-[1.6rem] border border-white/8 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(92,44,111,0.08))] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.16)] backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#5c2c6f]/35 hover:shadow-[0_20px_50px_rgba(0,0,0,0.24)]"
                 >
-                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-[#7ed957]">
+                  <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(126,217,87,0.12),rgba(92,44,111,0.18))] text-[#7ed957]">
                     <Icon />
                   </div>
 

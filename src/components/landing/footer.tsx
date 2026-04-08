@@ -13,30 +13,73 @@ function WhatsAppIcon() {
   );
 }
 
-export function Footer() {
+function InstagramIcon() {
   return (
-    <footer className="border-t border-white/10 px-4 py-10 md:px-6">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-3">
-          <SiteLogo />
-          <p className="max-w-sm text-sm text-[#C0C0C0]/74">
-            Sistema para fornecedores de festas e eventos com foco em gestão,
-            operação, financeiro, agenda e relacionamento.
-          </p>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4 fill-current"
+    >
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.25 1.65a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1ZM12 7a5 5 0 1 1-5 5 5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Z" />
+    </svg>
+  );
+}
+
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="border-t border-white/8 px-4 py-10 md:px-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div className="space-y-3">
+            <SiteLogo />
+            <p className="max-w-sm text-sm text-[#C0C0C0]/74">
+              Sistema para fornecedores de festas e eventos com foco em gestão,
+              operação, financeiro, agenda e relacionamento.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-4 text-sm text-[#C0C0C0]/82">
+            <Link href="/termos">Termos</Link>
+            <Link href="/privacidade">Privacidade</Link>
+
+            <a
+              href="https://wa.me/5585996451221"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2"
+            >
+              <WhatsAppIcon />
+              WhatsApp
+            </a>
+
+            <a
+              href="https://www.instagram.com/visionfestapp/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2"
+            >
+              <InstagramIcon />
+              VisionFest
+            </a>
+          </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm text-[#C0C0C0]/82">
-          <Link href="/termos">Termos</Link>
-          <Link href="/privacidade">Privacidade</Link>
-          <a
-            href="https://wa.me/5585996451221"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2"
-          >
-            <WhatsAppIcon />
-            WhatsApp
-          </a>
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/8 pt-6 text-sm text-[#C0C0C0]/72 md:flex-row md:items-center md:justify-between">
+          <p>© {currentYear} VisionFest. Todos os direitos reservados.</p>
+
+          <p className="flex flex-wrap items-center gap-1">
+            <span>Desenvolvido por</span>
+            <a
+              href="https://www.instagram.com/visionwaresolucoes/"
+              target="_blank"
+              rel="noreferrer"
+              className="font-medium text-white transition hover:text-[#7ed957]"
+            >
+              VisionWare Soluções
+            </a>
+          </p>
         </div>
       </div>
     </footer>
