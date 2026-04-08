@@ -82,16 +82,16 @@ export function Audience() {
             return (
               <article
                 key={item.title}
-                className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.06))] p-7 shadow-[0_12px_40px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:border-[#5c2c6f]/35 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(92,44,111,0.10))]"
+                className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.06))] p-7 shadow-[0_12px_40px_rgba(0,0,0,0.18)] transition duration-300 hover:-translate-y-1 hover:border-[#5c2c6f]/30 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(92,44,111,0.09))]"
               >
                 <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(126,217,87,0.14),rgba(92,44,111,0.18))] text-[#7ed957]">
                   <Icon />
                 </div>
 
-                <h3 className="text-xl font-semibold text-white">
+                <h3 className="text-[1.35rem] font-semibold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-4 leading-7 text-[#C0C0C0]/82">
+                <p className="mt-4 leading-8 text-[#C0C0C0]/82">
                   {item.description}
                 </p>
               </article>

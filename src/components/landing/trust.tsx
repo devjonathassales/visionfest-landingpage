@@ -66,7 +66,7 @@ export function Trust() {
                 key={item.title}
                 className="rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.06))] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#5c2c6f]/35 hover:bg-[linear-gradient(180deg,rgba(255,255,255,0.05),rgba(92,44,111,0.10))]"
               >
-                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(92,44,111,0.20),rgba(126,217,87,0.10))] text-[#C0C0C0]">
+                <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-[#5c2c6f]/30 bg-[linear-gradient(135deg,rgba(92,44,111,0.22),rgba(126,217,87,0.08))] text-[#C0C0C0] shadow-[0_8px_24px_rgba(0,0,0,0.16)]">
                   <Icon />
                 </div>
 

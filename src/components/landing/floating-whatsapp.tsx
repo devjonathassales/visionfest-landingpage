@@ -17,9 +17,9 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed right-5 bottom-5 z-[60] inline-flex items-center gap-3 rounded-full border border-lime-400/20 bg-[#0b1523]/92 px-4 py-3 text-sm font-semibold text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl transition hover:scale-[1.02] hover:border-lime-400/35"
+      className="fixed right-5 bottom-5 z-[60] inline-flex items-center gap-3 rounded-full border border-[#5c2c6f]/35 bg-[rgba(4,8,22,0.88)] px-4 py-3 text-sm font-semibold text-white shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl transition duration-200 hover:scale-[1.02] hover:border-[#7ed957]/30"
     >
-      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-lime-400 text-black">
+      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7ed957] text-black shadow-[0_0_18px_rgba(126,217,87,0.18)]">
         <WhatsAppIcon />
       </span>
       <span className="hidden sm:inline">Falar no WhatsApp</span>

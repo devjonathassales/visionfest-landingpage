@@ -151,11 +151,7 @@ export function Pricing() {
 
                 <a
                   href="#lead-form"
-                  className={`mt-8 inline-flex w-full items-center justify-center rounded-full px-5 py-3.5 font-semibold transition ${
-                    plan.featured
-                      ? "bg-[#7ed957] text-black hover:scale-[1.02]"
-                      : "bg-[#7ed957] text-black hover:scale-[1.02]"
-                  }`}
+                  className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#7ed957] px-5 py-3.5 font-semibold text-black transition hover:scale-[1.02]"
                 >
                   Agendar demonstração
                 </a>

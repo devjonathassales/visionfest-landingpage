@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { SiteLogo } from "@/components/landing/site-logo";
 
 const navItems = [
@@ -20,38 +23,158 @@ function WhatsAppIcon() {
   );
 }
 
-export function Header() {
+function MenuIcon() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/8 bg-[#040816]/78 backdrop-blur-2xl">
-      <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 md:px-6">
-        <div className="justify-self-start">
-          <div className="hidden md:block">
-            <SiteLogo />
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-5 w-5 fill-current"
+    >
+      <path d="M4 7h16v2H4V7Zm0 4h16v2H4v-2Zm0 4h16v2H4v-2Z" />
+    </svg>
+  );
+}
+
+function CloseIcon() {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-5 w-5 fill-current"
+    >
+      <path d="m18.3 5.71-1.41-1.42L12 9.17 7.11 4.29 5.7 5.71 10.59 10.6 5.7 15.49l1.41 1.41L12 12l4.89 4.9 1.41-1.41-4.89-4.89 4.89-4.89Z" />
+    </svg>
+  );
+}
+
+export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  return (
+    <>
+      <header className="sticky top-0 z-50 border-b border-white/8 bg-[#040816]/78 backdrop-blur-2xl">
+        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 md:px-6">
+          <div className="justify-self-start">
+            <div className="hidden md:block">
+              <SiteLogo />
+            </div>
+            <div className="md:hidden">
+              <SiteLogo compact />
+            </div>
           </div>
-          <div className="md:hidden">
-            <SiteLogo compact />
+
+          <nav className="hidden items-center justify-center gap-6 lg:flex">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-[#C0C0C0]/88 transition duration-200 hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="justify-self-end">
+            <div className="hidden items-center gap-3 md:flex">
+              <a
+                href="https://wa.me/5585996451221"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-[#5c2c6f]/40 bg-white/[0.02] px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-[#5c2c6f]/12"
+              >
+                <WhatsAppIcon />
+                WhatsApp
+              </a>
+
+              <a
+                href="#lead-form"
+                className="rounded-full bg-[#7ed957] px-5 py-2.5 text-sm font-semibold text-black transition duration-200 hover:scale-[1.02]"
+              >
+                Agendar demonstração
+              </a>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              className="inline-flex items-center justify-center rounded-full border border-[#5c2c6f]/40 bg-white/[0.02] p-2.5 text-white transition hover:bg-[#5c2c6f]/12 md:hidden"
+              aria-label="Abrir menu"
+            >
+              <MenuIcon />
+            </button>
           </div>
         </div>
+      </header>
 
-        <nav className="hidden items-center justify-center gap-6 lg:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-[#C0C0C0]/88 transition hover:text-white"
+      <div
+        className={`fixed inset-0 z-[70] md:hidden ${
+          menuOpen ? "pointer-events-auto" : "pointer-events-none"
+        }`}
+      >
+        <div
+          className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${
+            menuOpen ? "opacity-100" : "opacity-0"
+          }`}
+          onClick={() => setMenuOpen(false)}
+        />
+
+        <div
+          className={`absolute top-0 right-0 h-full w-[88%] max-w-[360px] border-l border-white/10 bg-[#07101d] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.35)] transition-transform duration-300 ${
+            menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            <SiteLogo compact />
+            <button
+              type="button"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.02] p-2.5 text-white"
+              aria-label="Fechar menu"
             >
-              {item.label}
-            </a>
-          ))}
-        </nav>
+              <CloseIcon />
+            </button>
+          </div>
 
-        <div className="justify-self-end">
-          <div className="hidden items-center gap-3 md:flex">
+          <nav className="mt-8 flex flex-col gap-3">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className="rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3 text-sm font-medium text-[#C0C0C0] transition hover:bg-[rgba(92,44,111,0.14)] hover:text-white"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="mt-8 flex flex-col gap-3">
             <a
               href="https://wa.me/5585996451221"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#5c2c6f]/40 bg-white/[0.02] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#5c2c6f]/12"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#5c2c6f]/40 bg-[rgba(92,44,111,0.10)] px-5 py-3.5 font-semibold text-white"
             >
               <WhatsAppIcon />
               WhatsApp
@@ -59,23 +182,14 @@ export function Header() {
 
             <a
               href="#lead-form"
-              className="rounded-full bg-[#7ed957] px-5 py-2.5 text-sm font-semibold text-black transition hover:scale-[1.02]"
+              onClick={() => setMenuOpen(false)}
+              className="inline-flex items-center justify-center rounded-full bg-[#7ed957] px-5 py-3.5 font-semibold text-black"
             >
               Agendar demonstração
             </a>
           </div>
-
-          <a
-            href="https://wa.me/5585996451221"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-[#5c2c6f]/40 bg-white/[0.02] p-2.5 text-white transition hover:bg-[#5c2c6f]/12 md:hidden"
-            aria-label="Falar no WhatsApp"
-          >
-            <WhatsAppIcon />
-          </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

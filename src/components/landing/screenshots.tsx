@@ -5,21 +5,21 @@ const shots = [
     title: "Dashboard com visão geral",
     description:
       "Acompanhe indicadores, faturamento e visão operacional em um só lugar.",
-    src: "/screens/dashboard-overview.png",
+    src: "/screens/dashboard-overview-v2.png",
     sizes: "(max-width: 768px) 100vw, 33vw",
   },
   {
     title: "Cadastro de clientes",
     description:
       "Centralize dados importantes e melhore o acompanhamento do relacionamento.",
-    src: "/screens/cliente-form.png",
+    src: "/screens/cliente-form-v2.png",
     sizes: "(max-width: 768px) 100vw, 33vw",
   },
   {
     title: "Financeiro organizado",
     description:
       "Tenha contas e movimentações com mais clareza e acompanhamento.",
-    src: "/screens/contas-pagar.png",
+    src: "/screens/contas-pagar-v2.png",
     sizes: "(max-width: 768px) 100vw, 33vw",
   },
 ];
@@ -45,9 +45,9 @@ export function Screenshots() {
           {shots.map((shot) => (
             <article
               key={shot.title}
-              className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.06))]"
+              className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.06))] transition duration-300 hover:-translate-y-1 hover:border-[#5c2c6f]/35"
             >
-              <div className="relative aspect-[16/10]">
+              <div className="relative aspect-[16/10] bg-[#07101d]">
                 <Image
                   src={shot.src}
                   alt={shot.title}
@@ -58,7 +58,7 @@ export function Screenshots() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-xl font-semibold text-white">
                   {shot.title}
                 </h3>
                 <p className="mt-3 leading-7 text-[#C0C0C0]/82">
