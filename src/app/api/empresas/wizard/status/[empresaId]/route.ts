@@ -1,0 +1,62 @@
+import { NextRequest, NextResponse } from "next/server";
+
+const API_URL = process.env.VISIONFEST_ADMIN_API_URL;
+
+type Context = {
+  params: Promise<{
+    empresaId: string;
+  }>;
+};
+
+export async function GET(_request: NextRequest, context: Context) {
+  try {
+    if (!API_URL) {
+      return NextResponse.json(
+        {
+          message:
+            "VISIONFEST_ADMIN_API_URL não está definida no .env.local da landing.",
+        },
+        { status: 500 },
+      );
+    }
+
+    const { empresaId } = await context.params;
+    const targetUrl = `${API_URL.replace(/\/$/, "")}/api/empresas/wizard/status/${empresaId}`;
+
+    const response = await fetch(targetUrl, {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const contentType = response.headers.get("content-type") || "";
+
+    let data: unknown = {};
+    if (contentType.includes("application/json")) {
+      data = await response.json();
+    } else {
+      data = {
+        raw: await response.text(),
+      };
+    }
+
+    return NextResponse.json(
+      {
+        ok: response.ok,
+        upstreamUrl: targetUrl,
+        upstreamStatus: response.status,
+        ...((typeof data === "object" && data !== null
+          ? data
+          : { data }) as Record<string, unknown>),
+      },
+      { status: response.status },
+    );
+  } catch (error) {
+    return NextResponse.json(
+      {
+        message: "Erro ao consultar status do wizard.",
+        error: error instanceof Error ? error.message : "unknown_error",
+      },
+      { status: 500 },
+    );
+  }
+}

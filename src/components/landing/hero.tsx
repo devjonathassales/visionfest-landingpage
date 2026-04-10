@@ -123,7 +123,7 @@ export function Hero() {
 
                 <div className="relative aspect-[16/9] bg-[#07101d]">
                   <Image
-                    src="/screens/dashboard-overview.png"
+                    src="/screens/dashboard-overview-v2.png"
                     alt="Tela do dashboard do VisionFest"
                     fill
                     sizes="(max-width: 1024px) 100vw, 58vw"
@@ -142,7 +142,7 @@ export function Hero() {
               </div>
               <div className="relative aspect-[4/3]">
                 <Image
-                  src="/screens/cliente-form.png"
+                  src="/screens/cliente-form-v2.png"
                   alt="Tela de cadastro de cliente do VisionFest"
                   fill
                   sizes="(max-width: 1279px) 28vw, 22vw"
@@ -159,7 +159,7 @@ export function Hero() {
               </div>
               <div className="relative aspect-[4/3]">
                 <Image
-                  src="/screens/contas-pagar.png"
+                  src="/screens/contas-pagar-v2.png"
                   alt="Tela de contas a pagar do VisionFest"
                   fill
                   sizes="22vw"
