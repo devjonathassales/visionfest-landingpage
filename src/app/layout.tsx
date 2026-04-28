@@ -22,7 +22,7 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR">
-      <body className="bg-[#040816] text-white antialiased">
+      <body className="bg-[rgb(var(--vf-background))] text-[rgb(var(--vf-text))] antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
