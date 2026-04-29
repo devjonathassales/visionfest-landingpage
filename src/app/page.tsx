@@ -19,7 +19,7 @@ import { WizardShell } from "@/components/landing/wizard-shell";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#040816] text-white">
+    <main className="min-h-screen overflow-x-hidden bg-[rgb(var(--vf-background))] text-[rgb(var(--vf-text))]">
       <Header />
       <Hero />
       <Screenshots />

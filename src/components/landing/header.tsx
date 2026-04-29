@@ -72,7 +72,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-white/8 bg-[#040816]/78 backdrop-blur-2xl">
+      <header className="sticky top-0 z-50 border-b border-white/8 bg-[rgb(var(--vf-background))] backdrop-blur-2xl">
         <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-4 px-4 py-4 md:px-6">
           <div className="justify-self-start">
             <div className="hidden md:block">
