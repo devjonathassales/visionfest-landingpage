@@ -25,7 +25,7 @@ export function FinalCTA() {
                 Agendar demonstração
               </a>
               <a
-                href="https://wa.me/5585996451221"
+                href="https://wa.me/5585920077106"
                 target="_blank"
                 rel="noreferrer"
                 className="rounded-full border border-white/12 px-7 py-3.5 text-center font-semibold text-white transition hover:bg-white/5"

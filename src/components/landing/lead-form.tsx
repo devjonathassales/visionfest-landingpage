@@ -93,7 +93,7 @@ export function LeadForm() {
               Fale agora pelo WhatsApp
             </p>
             <a
-              href="https://wa.me/5585996451221"
+              href="https://wa.me/5585920077106"
               target="_blank"
               rel="noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-full border border-[#5c2c6f]/35 bg-[rgba(92,44,111,0.12)] px-5 py-3 font-semibold text-white transition hover:bg-[rgba(92,44,111,0.18)]"

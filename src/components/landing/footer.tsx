@@ -45,7 +45,7 @@ export function Footer() {
             <Link href="/privacidade">Privacidade</Link>
 
             <a
-              href="https://wa.me/5585996451221"
+              href="https://wa.me/5585920077106"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2"

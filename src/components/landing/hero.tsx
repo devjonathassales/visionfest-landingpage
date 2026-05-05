@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const badges = [
-  "Orçamentos",
-  "Contratos",
-  "Agenda",
-  "Clientes",
-  "Estoque",
-  "Financeiro",
+  "Orçamentos sem se perder",
+  "Contratos em ordem",
+  "Datas reservadas",
+  "Clientes organizados",
+  "Estoque controlado",
+  "Cobranças no radar",
 ];
 
 function CheckIcon() {
@@ -40,30 +40,38 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-12">
         <div className="max-w-lg">
-          <span className="inline-flex rounded-full border border-[#7ed957]/12 bg-[#7ed957]/8 px-4 py-1.5 text-xs font-medium text-[#7ed957] md:text-sm">
-            Feito para o mercado real de festas e eventos
+          <span className="inline-flex rounded-full border border-[#7ed957]/20 bg-[#7ed957]/10 px-4 py-1.5 text-xs font-medium text-[#7ed957] md:text-sm">
+            Oferta de lançamento para fornecedores de festas
           </span>
 
-          <h1 className="mt-5 max-w-[11.5ch] text-[2.2rem] leading-[1.02] font-black tracking-[-0.045em] text-white sm:text-[2.55rem] md:text-[2.95rem] xl:text-[3.35rem]">
-            Gestão completa para fornecedores de festas e eventos.
+          <h1 className="mt-5 max-w-[12ch] text-[2.2rem] leading-[1.02] font-black tracking-[-0.045em] text-white sm:text-[2.55rem] md:text-[2.95rem] xl:text-[3.35rem]">
+            Pare de perder clientes, datas e pagamentos no WhatsApp.
           </h1>
 
           <p className="mt-5 max-w-lg text-[0.98rem] leading-7 text-[#C0C0C0]/88 md:text-[1.03rem] md:leading-8">
-            Orçamentos, contratos, agenda, clientes, estoque e financeiro em um
-            único sistema para profissionalizar sua operação e organizar sua
-            empresa com mais clareza.
+            O VisionFest organiza orçamentos, contratos, agenda, clientes,
+            estoque e financeiro em um só lugar — simples, direto e feito para
+            decoradores, buffets, locadores e fornecedores de eventos.
           </p>
+
+          <div className="mt-5 rounded-2xl border border-[#7ed957]/20 bg-[#7ed957]/8 p-4 text-sm text-[#C0C0C0]">
+            <strong className="text-white">
+              Plano Premium por R$ 99,90/mês
+            </strong>{" "}
+            para os primeiros clientes. Eventos ilimitados e sem taxa por
+            evento.
+          </div>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#lead-form"
+              href="#planos"
               className="rounded-full bg-[#7ed957] px-6 py-3.5 text-center font-semibold text-black shadow-[0_0_24px_rgba(126,217,87,0.12)] transition hover:scale-[1.02]"
             >
-              Quero conhecer
+              Ver planos a partir de R$ 49,90
             </a>
 
             <a
-              href="https://wa.me/5585996451221"
+              href="https://wa.me/5585920077106"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#5c2c6f]/40 bg-[rgba(92,44,111,0.08)] px-6 py-3.5 text-center font-semibold text-white transition hover:bg-[rgba(92,44,111,0.14)]"
@@ -75,9 +83,9 @@ export function Hero() {
 
           <div className="mt-7 flex flex-wrap gap-3">
             {[
-              "Operação centralizada",
-              "Mais controle financeiro",
-              "Fluxos mais organizados",
+              "Chega de orçamento perdido",
+              "Chega de cobrança esquecida",
+              "Chega de evento desorganizado",
             ].map((item) => (
               <div
                 key={item}
@@ -117,7 +125,7 @@ export function Hero() {
                   </div>
 
                   <div className="rounded-full border border-[#5c2c6f]/35 bg-[#5c2c6f]/14 px-3 py-1 text-[10px] font-semibold tracking-wide text-[#C0C0C0] md:text-xs">
-                    VisionFest em ação
+                    Sua empresa organizada
                   </div>
                 </div>
 
@@ -137,7 +145,7 @@ export function Hero() {
             <div className="absolute -bottom-4 left-3 hidden w-[34%] overflow-hidden rounded-[1.1rem] border border-white/10 bg-[#0b1523]/95 shadow-[0_16px_40px_rgba(0,0,0,0.32)] backdrop-blur-xl lg:block">
               <div className="border-b border-white/8 px-3 py-2.5">
                 <p className="text-[10px] font-semibold tracking-[0.18em] text-[#C0C0C0] uppercase">
-                  Cadastro de cliente
+                  Cliente não se perde
                 </p>
               </div>
               <div className="relative aspect-[4/3]">
@@ -154,53 +162,17 @@ export function Hero() {
             <div className="absolute top-5 right-3 hidden w-[30%] overflow-hidden rounded-[1.1rem] border border-white/10 bg-[#0b1523]/95 shadow-[0_16px_40px_rgba(0,0,0,0.32)] backdrop-blur-xl xl:block">
               <div className="border-b border-white/8 px-3 py-2.5">
                 <p className="text-[10px] font-semibold tracking-[0.18em] text-[#C0C0C0] uppercase">
-                  Financeiro
+                  Cobrança no radar
                 </p>
               </div>
               <div className="relative aspect-[4/3]">
                 <Image
                   src="/screens/contas-pagar-v2.png"
-                  alt="Tela de contas a pagar do VisionFest"
+                  alt="Tela financeira do VisionFest"
                   fill
                   sizes="22vw"
                   className="object-cover object-top"
                 />
-              </div>
-            </div>
-
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:hidden">
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0b1523]/95">
-                <div className="border-b border-white/8 px-4 py-3">
-                  <p className="text-[11px] font-semibold tracking-[0.18em] text-[#C0C0C0] uppercase">
-                    Cadastro de cliente
-                  </p>
-                </div>
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src="/screens/cliente-form.png"
-                    alt="Tela de cadastro de cliente do VisionFest"
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-
-              <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0b1523]/95">
-                <div className="border-b border-white/8 px-4 py-3">
-                  <p className="text-[11px] font-semibold tracking-[0.18em] text-[#C0C0C0] uppercase">
-                    Financeiro
-                  </p>
-                </div>
-                <div className="relative aspect-[16/10]">
-                  <Image
-                    src="/screens/contas-pagar.png"
-                    alt="Tela de contas a pagar do VisionFest"
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover object-top"
-                  />
-                </div>
               </div>
             </div>
           </div>

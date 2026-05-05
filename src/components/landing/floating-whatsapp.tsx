@@ -13,7 +13,7 @@ function WhatsAppIcon() {
 export function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/5585996451221"
+      href="https://wa.me/5585920077106"
       target="_blank"
       rel="noreferrer"
       aria-label="Falar no WhatsApp"

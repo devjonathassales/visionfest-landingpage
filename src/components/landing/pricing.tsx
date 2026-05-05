@@ -32,50 +32,52 @@ function BoltIcon() {
 
 const plans = [
   {
-    name: "Essencial",
-    subtitle: "Mais econômico para começar",
-    price: "R$ 179",
-    badge: "Mais econômico",
+    name: "Start",
+    subtitle: "Para sair da bagunça do WhatsApp",
+    price: "R$ 49,90",
+    badge: "Entrada",
     icon: ShieldIcon,
-    users: "5 usuários",
+    users: "Até 2 usuários",
     items: [
-      "Contratos, OS, Agenda e alertas",
-      "Estoque alugável + matéria-prima",
-      "Relatórios essenciais",
-      "App de ponto (básico)",
-      "Evolução 2h/mês • Triagem 5d • Entrega até 30d",
-      "Melhorias da comunidade após 60 dias",
+      "Cadastro de clientes",
+      "Agenda de eventos",
+      "Orçamentos e contratos",
+      "Controle financeiro básico",
+      "Eventos ilimitados",
+      "Ideal para começar com baixo investimento",
     ],
   },
   {
-    name: "Operação",
-    subtitle: "Básico + fluxo diário",
-    price: "R$ 200",
+    name: "Profissional",
+    subtitle: "Para organizar vendas e operação",
+    price: "R$ 79,90",
+    badge: "Custo-benefício",
     icon: BoltIcon,
-    users: "15 usuários",
+    users: "Até 5 usuários",
     items: [
-      "Tudo do Essencial + CRM & Leads",
-      "Relatórios completos & permissões avançadas",
-      "Automações básicas",
-      "Evolução: 5h/mês • Triagem 3d • Entrega até 15d",
-      "Fast-track: 1 solicitação/trimestre",
-      "Melhorias da comunidade após 30 dias",
+      "Tudo do Start",
+      "Estoque e itens de locação",
+      "Contas a pagar e receber",
+      "Relatórios operacionais",
+      "Mais controle sobre datas, clientes e pagamentos",
+      "Ideal para empresas que já vendem toda semana",
     ],
   },
   {
-    name: "Full",
-    subtitle: "Parceria de produto",
-    price: "R$ 259",
-    badge: "Recomendado",
+    name: "Premium",
+    subtitle: "Para ter tudo liberado pagando pouco",
+    price: "R$ 99,90",
+    badge: "Mais vendido",
     icon: CrownIcon,
     users: "Usuários ilimitados",
     featured: true,
     items: [
-      "Todos os módulos atuais e futuros",
-      "FeatureSync: recebe melhorias da comunidade imediatamente",
-      "Evolução: 12h/mês (acúmulo até 24h)",
-      "Triagem 1d • Entrega 5–10d • Fast-track ilimitado",
-      "Sucesso do cliente dedicado • Acompanhamento mensal",
+      "Tudo do Profissional",
+      "Todos os módulos disponíveis",
+      "Eventos ilimitados",
+      "Sem taxa por evento",
+      "Prioridade no atendimento inicial",
+      "Melhor plano para crescer sem travar a operação",
     ],
   },
 ];
@@ -86,11 +88,22 @@ export function Pricing() {
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold tracking-[0.24em] text-[#7ed957] uppercase">
-            Planos e preços
+            Oferta de lançamento
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
-            Escolha a estrutura ideal para o momento do seu negócio
+            Escolha um plano simples para parar de perder dinheiro com
+            desorganização
           </h2>
+          <p className="mt-5 text-lg leading-8 text-[#C0C0C0]/84">
+            Preços promocionais para os primeiros clientes VisionFest. Depois da
+            fase de lançamento, os valores podem mudar para novos contratos.
+          </p>
+        </div>
+
+        <div className="mt-8 rounded-[1.4rem] border border-[#7ed957]/20 bg-[#7ed957]/8 px-5 py-4 text-center text-sm text-[#C0C0C0]">
+          <strong className="text-white">Premium por R$ 99,90/mês:</strong>{" "}
+          plano recomendado para quem quer organizar clientes, contratos,
+          agenda, estoque e financeiro sem pagar caro.
         </div>
 
         <div className="mt-12 grid gap-6 xl:grid-cols-3">
@@ -102,7 +115,7 @@ export function Pricing() {
                 key={plan.name}
                 className={`rounded-[1.8rem] border p-7 transition duration-300 hover:-translate-y-1 ${
                   plan.featured
-                    ? "border-[#5c2c6f]/45 bg-[linear-gradient(180deg,rgba(92,44,111,0.18),rgba(126,217,87,0.10))] shadow-[0_20px_80px_rgba(0,0,0,0.22)]"
+                    ? "border-[#7ed957]/45 bg-[linear-gradient(180deg,rgba(126,217,87,0.14),rgba(92,44,111,0.12))] shadow-[0_20px_80px_rgba(0,0,0,0.22)]"
                     : "border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.04))]"
                 }`}
               >
@@ -121,6 +134,7 @@ export function Pricing() {
                 <h3 className="mt-5 text-2xl font-bold text-white">
                   {plan.name}
                 </h3>
+
                 <p className="mt-2 text-lg text-[#C0C0C0]/84">
                   {plan.subtitle}
                 </p>
@@ -131,7 +145,7 @@ export function Pricing() {
                 </div>
 
                 <div className="mt-6">
-                  <p className="text-sm text-[#C0C0C0]/72">A partir de</p>
+                  <p className="text-sm text-[#C0C0C0]/72">Valor promocional</p>
                   <p className="mt-1 text-5xl font-black tracking-tight text-white">
                     {plan.price}
                     <span className="ml-2 text-base font-medium text-[#C0C0C0]/78">
@@ -150,10 +164,12 @@ export function Pricing() {
                 </ul>
 
                 <a
-                  href="#lead-form"
+                  href="https://wa.me/5585996451221"
+                  target="_blank"
+                  rel="noreferrer"
                   className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#7ed957] px-5 py-3.5 font-semibold text-black transition hover:scale-[1.02]"
                 >
-                  Agendar demonstração
+                  Quero esse plano
                 </a>
 
                 <p className="mt-4 text-center text-xs text-[#C0C0C0]/68">
@@ -165,48 +181,52 @@ export function Pricing() {
         </div>
 
         <div className="mt-8 rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(92,44,111,0.05))] p-6 md:p-8">
-          <div className="grid gap-6 xl:grid-cols-[0.22fr_0.53fr_0.25fr] xl:items-start">
+          <div className="grid gap-6 xl:grid-cols-[0.25fr_0.5fr_0.25fr] xl:items-start">
             <div>
-              <p className="text-3xl font-bold text-white">Enterprise</p>
-              <p className="mt-2 text-xl text-[#C0C0C0]/82">Sob medida</p>
+              <p className="text-3xl font-bold text-white">Precisa de ajuda?</p>
+              <p className="mt-2 text-xl text-[#C0C0C0]/82">
+                Implantação acompanhada
+              </p>
               <span className="mt-4 inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-sm text-[#C0C0C0]">
-                Escopo customizado
+                Para começar certo
               </span>
             </div>
 
             <div className="grid gap-3 text-[#C0C0C0]/84 md:grid-cols-2">
-              <p>• Usuários/filiais sob demanda</p>
-              <p>• Integrações, SSO e governança</p>
-              <p>• SLAs customizados e priorização por contrato</p>
-              <p>• Treinamento e migração de dados</p>
+              <p>• Tiramos suas dúvidas pelo WhatsApp</p>
+              <p>• Ajudamos a escolher o melhor plano</p>
+              <p>• Orientamos o primeiro acesso</p>
+              <p>• Mostramos como organizar clientes e eventos</p>
             </div>
 
             <div className="xl:text-right">
               <a
-                href="#lead-form"
+                href="https://wa.me/5585920077106"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex rounded-full bg-[#7ed957] px-6 py-3.5 font-semibold text-black transition hover:scale-[1.02]"
               >
-                Falar com vendas
+                Falar no WhatsApp
               </a>
               <p className="mt-3 text-sm text-[#C0C0C0]/72">
-                Projeto e SLA sob medida
+                Atendimento para novos clientes
               </p>
             </div>
           </div>
 
           <div className="mt-6 space-y-2 text-sm text-[#C0C0C0]/72">
             <p>
-              • Créditos de melhoria incluídos variam por plano; pedidos que
-              fizerem sentido para todos podem virar parte do produto.
+              • Os valores são promocionais para lançamento e podem ser
+              alterados para novos clientes futuramente.
             </p>
             <p>
-              • Add-ons: usuário extra, empresa extra e armazenamento podem ser
-              contratados à parte.
+              • O VisionFest foi criado para fornecedores de festas e eventos
+              que precisam organizar clientes, contratos, agenda, estoque e
+              financeiro.
             </p>
             <p>
-              • Integrações especiais e módulos adicionais podem ser contratados
-              à parte. App Planner do Cliente e pagamentos diretos na
-              plataforma: em breve.
+              • Funcionalidades avançadas e integrações específicas podem ser
+              contratadas separadamente conforme necessidade.
             </p>
           </div>
         </div>

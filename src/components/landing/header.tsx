@@ -98,7 +98,7 @@ export function Header() {
           <div className="justify-self-end">
             <div className="hidden items-center gap-3 md:flex">
               <a
-                href="https://wa.me/5585996451221"
+                href="https://wa.me/5585920077106"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-[#5c2c6f]/40 bg-white/[0.02] px-4 py-2 text-sm font-semibold text-white transition duration-200 hover:bg-[#5c2c6f]/12"

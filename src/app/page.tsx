@@ -11,24 +11,24 @@ import { HowItWorks } from "@/components/landing/how-it-works";
 import { Integrations } from "@/components/landing/integrations";
 import { LeadForm } from "@/components/landing/lead-form";
 import { Modules } from "@/components/landing/modules";
+import { PainSection } from "@/components/landing/PainSection";
 import { Pricing } from "@/components/landing/pricing";
 import { PromoPopup } from "@/components/landing/promo-popup";
 import { Screenshots } from "@/components/landing/screenshots";
 import { Trust } from "@/components/landing/trust";
-import { WizardShell } from "@/components/landing/wizard-shell";
 
 export default function HomePage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-[rgb(var(--vf-background))] text-[rgb(var(--vf-text))]">
       <Header />
       <Hero />
+      <PainSection />
       <Screenshots />
       <Audience />
       <Features />
       <Modules />
       <HowItWorks />
       <Comparison />
-      <WizardShell />
       <Integrations />
       <Pricing />
       <Trust />

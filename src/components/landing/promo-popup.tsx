@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const STORAGE_KEY = "visionfest_promo_popup_closed";
+const WHATSAPP_URL =
+  "https://wa.me/5585996451221?text=Olá! Quero garantir minha vaga no Plano Premium do VisionFest por R$79,90.";
 
 function CloseIcon() {
   return (
@@ -19,14 +21,18 @@ function CloseIcon() {
 export function PromoPopup() {
   const [open, setOpen] = useState(false);
 
+  const handleClose = useCallback(() => {
+    setOpen(false);
+    window.localStorage.setItem(STORAGE_KEY, "true");
+  }, []);
+
   useEffect(() => {
     const wasClosed = window.localStorage.getItem(STORAGE_KEY);
-
     if (wasClosed === "true") return;
 
     const timer = window.setTimeout(() => {
       setOpen(true);
-    }, 6500);
+    }, 7500);
 
     return () => window.clearTimeout(timer);
   }, []);
@@ -35,29 +41,18 @@ export function PromoPopup() {
     if (!open) return;
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") handleClose();
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
-
-  function handleClose() {
-    setOpen(false);
-    window.localStorage.setItem(STORAGE_KEY, "true");
-  }
-
-  function handleGoToWizard() {
-    setOpen(false);
-    const target = document.getElementById("wizard");
-    target?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  }, [open, handleClose]);
 
   if (!open) return null;
 
   return (
     <div className="fixed inset-0 z-[90] flex items-center justify-center bg-black/70 px-4 backdrop-blur-sm">
-      <div className="relative w-full max-w-xl overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(10,16,27,0.98),rgba(92,44,111,0.18))] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)] md:p-8">
+      <div className="relative w-full max-w-xl overflow-hidden rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(10,16,27,0.98),rgba(92,44,111,0.2))] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)] md:p-8">
         <button
           type="button"
           onClick={handleClose}
@@ -69,21 +64,22 @@ export function PromoPopup() {
 
         <div className="max-w-md">
           <span className="inline-flex rounded-full border border-[#7ed957]/20 bg-[#7ed957]/10 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-[#7ed957] uppercase">
-            Oferta imperdível
+            Oferta fundador
           </span>
 
           <h3 className="mt-5 text-3xl font-black tracking-tight text-white md:text-4xl">
-            70% OFF no plano Full
+            Premium por R$79,90/mês para as primeiras 10 empresas.
           </h3>
 
           <p className="mt-4 text-base leading-7 text-[#C0C0C0]/86">
-            Garanta agora o plano Full do VisionFest com acesso recorrente por
-            cartão de crédito ou Pix recorrente.
+            Depois do lote fundador, o Plano Premium volta para R$99,90/mês.
+            Garanta agora sua vaga e organize clientes, contratos, agenda,
+            estoque e financeiro em um só lugar.
           </p>
 
           <div className="mt-6 flex items-end gap-3">
             <span className="text-lg text-[#C0C0C0]/52 line-through">
-              R$ 259,00
+              R$ 99,90
             </span>
             <span className="text-4xl font-black tracking-tight text-[#7ed957]">
               R$ 79,90
@@ -92,28 +88,35 @@ export function PromoPopup() {
           </div>
 
           <ul className="mt-6 space-y-3 text-sm text-[#C0C0C0]/88">
-            <li>• Plano Full com acesso completo</li>
-            <li>• Condição especial de lançamento</li>
-            <li>• Assinatura recorrente simples e rápida</li>
+            <li>• Eventos ilimitados</li>
+            <li>• Sem taxa por evento</li>
+            <li>• Todos os módulos principais liberados</li>
+            <li>• Condição especial para clientes fundadores</li>
           </ul>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={handleGoToWizard}
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              onClick={handleClose}
               className="inline-flex items-center justify-center rounded-full bg-[#7ed957] px-6 py-3.5 font-semibold text-black transition hover:scale-[1.02]"
             >
               Garantir minha vaga
-            </button>
+            </a>
 
-            <button
-              type="button"
+            <a
+              href="#planos"
               onClick={handleClose}
               className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 py-3.5 font-semibold text-white transition hover:bg-white/[0.06]"
             >
-              Continuar explorando
-            </button>
+              Ver planos
+            </a>
           </div>
+
+          <p className="mt-4 text-xs leading-5 text-[#C0C0C0]/62">
+            Oferta limitada aos primeiros clientes da fase de lançamento.
+          </p>
         </div>
       </div>
     </div>
