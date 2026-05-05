@@ -65,114 +65,132 @@ const plans = [
   },
   {
     name: "Premium",
-    subtitle: "Para ter tudo liberado pagando pouco",
-    price: "R$ 99,90",
+    subtitle: "Lote fundador por tempo limitado",
+    price: "R$ 79,90",
+    oldPrice: "R$ 99,90",
     badge: "Mais vendido",
     icon: CrownIcon,
     users: "Usuários ilimitados",
     featured: true,
     items: [
       "Tudo do Profissional",
-      "Todos os módulos disponíveis",
+      "Todos os módulos principais liberados",
       "Eventos ilimitados",
       "Sem taxa por evento",
       "Prioridade no atendimento inicial",
-      "Melhor plano para crescer sem travar a operação",
+      "Valor especial para as primeiras 10 empresas",
     ],
   },
 ];
 
 export function Pricing() {
   return (
-    <section id="planos" className="px-4 py-16 md:px-6 md:py-24">
+    <section
+      id="planos"
+      className="overflow-hidden px-4 py-14 md:px-6 md:py-24"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold tracking-[0.24em] text-[#7ed957] uppercase">
+          <p className="text-xs font-semibold tracking-[0.22em] text-[#7ed957] uppercase sm:text-sm sm:tracking-[0.24em]">
             Oferta de lançamento
           </p>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-5xl">
+
+          <h2 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-5xl">
             Escolha um plano simples para parar de perder dinheiro com
             desorganização
           </h2>
-          <p className="mt-5 text-lg leading-8 text-[#C0C0C0]/84">
+
+          <p className="mt-4 text-base leading-7 text-[#C0C0C0]/84 sm:text-lg sm:leading-8">
             Preços promocionais para os primeiros clientes VisionFest. Depois da
             fase de lançamento, os valores podem mudar para novos contratos.
           </p>
         </div>
 
-        <div className="mt-8 rounded-[1.4rem] border border-[#7ed957]/20 bg-[#7ed957]/8 px-5 py-4 text-center text-sm text-[#C0C0C0]">
-          <strong className="text-white">Premium por R$ 99,90/mês:</strong>{" "}
-          plano recomendado para quem quer organizar clientes, contratos,
-          agenda, estoque e financeiro sem pagar caro.
+        <div className="mt-7 rounded-[1.2rem] border border-[#7ed957]/20 bg-[#7ed957]/8 px-4 py-4 text-center text-sm leading-6 text-[#C0C0C0] sm:mt-8 sm:rounded-[1.4rem] sm:px-5">
+          <strong className="text-white">
+            Premium por R$ 79,90/mês no lote fundador:
+          </strong>{" "}
+          condição limitada para as primeiras 10 empresas. Depois, o Premium
+          volta para R$ 99,90/mês.
         </div>
 
-        <div className="mt-12 grid gap-6 xl:grid-cols-3">
+        <div className="mt-10 grid min-w-0 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {plans.map((plan) => {
             const Icon = plan.icon;
 
             return (
               <article
                 key={plan.name}
-                className={`rounded-[1.8rem] border p-7 transition duration-300 hover:-translate-y-1 ${
+                className={`min-w-0 rounded-[1.4rem] border p-5 transition duration-300 hover:-translate-y-1 sm:p-6 lg:p-7 ${
                   plan.featured
                     ? "border-[#7ed957]/45 bg-[linear-gradient(180deg,rgba(126,217,87,0.14),rgba(92,44,111,0.12))] shadow-[0_20px_80px_rgba(0,0,0,0.22)]"
                     : "border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(92,44,111,0.04))]"
                 }`}
               >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-[#7ed957]">
+                <div className="flex min-w-0 items-start justify-between gap-3">
+                  <div className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-black/20 text-[#7ed957] sm:h-11 sm:w-11">
                     <Icon />
                   </div>
 
-                  {plan.badge ? (
-                    <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-semibold text-[#C0C0C0]">
-                      {plan.badge}
-                    </span>
-                  ) : null}
+                  <span className="min-w-0 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-center text-[11px] font-semibold text-[#C0C0C0] sm:text-xs">
+                    {plan.badge}
+                  </span>
                 </div>
 
-                <h3 className="mt-5 text-2xl font-bold text-white">
+                <h3 className="mt-5 text-xl font-bold break-words text-white sm:text-2xl">
                   {plan.name}
                 </h3>
 
-                <p className="mt-2 text-lg text-[#C0C0C0]/84">
+                <p className="mt-2 min-h-[3.25rem] text-base leading-7 text-[#C0C0C0]/84 sm:text-lg">
                   {plan.subtitle}
                 </p>
 
-                <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 text-sm text-[#C0C0C0]">
-                  <UsersIcon />
-                  {plan.users}
+                <div className="mt-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-[#C0C0C0]">
+                  <span className="shrink-0">
+                    <UsersIcon />
+                  </span>
+                  <span className="min-w-0 break-words">{plan.users}</span>
                 </div>
 
                 <div className="mt-6">
                   <p className="text-sm text-[#C0C0C0]/72">Valor promocional</p>
-                  <p className="mt-1 text-5xl font-black tracking-tight text-white">
+
+                  {plan.oldPrice ? (
+                    <p className="mt-1 text-base text-[#C0C0C0]/48 line-through">
+                      {plan.oldPrice}
+                    </p>
+                  ) : null}
+
+                  <p className="mt-1 text-4xl font-black tracking-tight break-words text-white sm:text-5xl">
                     {plan.price}
-                    <span className="ml-2 text-base font-medium text-[#C0C0C0]/78">
+                    <span className="ml-1 text-sm font-medium text-[#C0C0C0]/78 sm:ml-2 sm:text-base">
                       /mês
                     </span>
                   </p>
                 </div>
 
-                <ul className="mt-8 space-y-4">
+                <ul className="mt-7 space-y-3.5 sm:mt-8 sm:space-y-4">
                   {plan.items.map((item) => (
-                    <li key={item} className="flex gap-3 text-[#C0C0C0]/84">
-                      <span className="mt-1 text-[#7ed957]">•</span>
-                      <span>{item}</span>
+                    <li
+                      key={item}
+                      className="flex min-w-0 gap-3 text-sm leading-6 text-[#C0C0C0]/84 sm:text-base"
+                    >
+                      <span className="mt-1 shrink-0 text-[#7ed957]">•</span>
+                      <span className="min-w-0 break-words">{item}</span>
                     </li>
                   ))}
                 </ul>
 
                 <a
-                  href="https://wa.me/5585996451221"
+                  href="https://wa.me/5585996451221?text=Olá! Quero conhecer o plano do VisionFest."
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-[#7ed957] px-5 py-3.5 font-semibold text-black transition hover:scale-[1.02]"
+                  className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-[#7ed957] px-5 py-3 text-sm font-semibold text-black transition hover:scale-[1.02] sm:mt-8 sm:py-3.5 sm:text-base"
                 >
                   Quero esse plano
                 </a>
 
-                <p className="mt-4 text-center text-xs text-[#C0C0C0]/68">
+                <p className="mt-4 text-center text-xs leading-5 text-[#C0C0C0]/68">
                   Eventos ilimitados em todos os planos.
                 </p>
               </article>
@@ -180,41 +198,46 @@ export function Pricing() {
           })}
         </div>
 
-        <div className="mt-8 rounded-[1.8rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(92,44,111,0.05))] p-6 md:p-8">
-          <div className="grid gap-6 xl:grid-cols-[0.25fr_0.5fr_0.25fr] xl:items-start">
-            <div>
-              <p className="text-3xl font-bold text-white">Precisa de ajuda?</p>
-              <p className="mt-2 text-xl text-[#C0C0C0]/82">
+        <div className="mt-8 rounded-[1.4rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(92,44,111,0.05))] p-5 sm:rounded-[1.8rem] sm:p-6 md:p-8">
+          <div className="grid min-w-0 gap-6 xl:grid-cols-[0.25fr_0.5fr_0.25fr] xl:items-start">
+            <div className="min-w-0">
+              <p className="text-2xl font-bold break-words text-white sm:text-3xl">
+                Precisa de ajuda?
+              </p>
+
+              <p className="mt-2 text-lg text-[#C0C0C0]/82 sm:text-xl">
                 Implantação acompanhada
               </p>
+
               <span className="mt-4 inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-sm text-[#C0C0C0]">
                 Para começar certo
               </span>
             </div>
 
-            <div className="grid gap-3 text-[#C0C0C0]/84 md:grid-cols-2">
+            <div className="grid min-w-0 gap-3 text-sm leading-6 text-[#C0C0C0]/84 sm:text-base md:grid-cols-2">
               <p>• Tiramos suas dúvidas pelo WhatsApp</p>
               <p>• Ajudamos a escolher o melhor plano</p>
               <p>• Orientamos o primeiro acesso</p>
               <p>• Mostramos como organizar clientes e eventos</p>
             </div>
 
-            <div className="xl:text-right">
+            <div className="min-w-0 xl:text-right">
               <a
-                href="https://wa.me/5585920077106"
+                href="https://wa.me/5585996451221?text=Olá! Quero falar sobre o VisionFest."
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex rounded-full bg-[#7ed957] px-6 py-3.5 font-semibold text-black transition hover:scale-[1.02]"
+                className="inline-flex w-full justify-center rounded-full bg-[#7ed957] px-6 py-3 font-semibold text-black transition hover:scale-[1.02] sm:w-auto sm:py-3.5"
               >
                 Falar no WhatsApp
               </a>
+
               <p className="mt-3 text-sm text-[#C0C0C0]/72">
                 Atendimento para novos clientes
               </p>
             </div>
           </div>
 
-          <div className="mt-6 space-y-2 text-sm text-[#C0C0C0]/72">
+          <div className="mt-6 space-y-2 text-xs leading-5 text-[#C0C0C0]/72 sm:text-sm sm:leading-6">
             <p>
               • Os valores são promocionais para lançamento e podem ser
               alterados para novos clientes futuramente.
